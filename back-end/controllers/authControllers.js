@@ -140,7 +140,27 @@ try {
     if (username) {
         user.username = username
     }
+
+    if (email) {
+        user.email = email
+    }
+
+    if (contact_number) {
+        user.contact_number = contact_number
+    }
+     await user.save()
+
+     return res.status(200).json({ messaga: "user updated", ok:true,})
 } catch (error) {
-    
+ console.log(error)
+ return res.status(500).json({ message: "Server Error", ok:false,})
 }
+}
+
+module.exports = {
+    login,
+    logout,
+    register,
+    load_user_profile,
+    update_user_profile
 }
