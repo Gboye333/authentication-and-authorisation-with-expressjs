@@ -1,4 +1,4 @@
-const get_user_id = async(req) => {
+const get_user_id = async (req) => {
     return req?.signedCookies?.user?.id || 0;
 }
 
